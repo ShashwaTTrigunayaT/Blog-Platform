@@ -1,0 +1,218 @@
+/* General Body */
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background: #fdfdfd;
+  color: #111;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Blog Container */
+.blog-container {
+  max-width: 900px;
+  margin: 3em auto;
+  padding: 2.5em;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+}
+
+/* Blog Header */
+.blog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+/* Blog Title */
+.blog-title {
+  font-size: 3em;
+  font-weight: 800;
+  text-align: left;
+  letter-spacing: -1px;
+}
+
+/* Edit & Delete Buttons */
+.blog-actions {
+  display: flex;
+  gap: 0.8em;
+}
+
+/* Common style for both Edit and Delete */
+.blog-actions .btn-edit,
+.blog-actions .btn-delete {
+  padding: 0.7em 1.8em;
+  border-radius: 35px;               /* more pill-shaped */
+  font-weight: 700;
+  font-size: 1em;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  border: none;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);  /* subtle floating effect */
+  letter-spacing: 0.5px;
+}
+
+/* Edit Button — Blue Gradient */
+.blog-actions .btn-edit {
+  background: linear-gradient(135deg, #0a84ff, #3a9cff);
+  color: white;
+}
+
+.blog-actions .btn-edit:hover {
+  background: linear-gradient(135deg, #0066cc, #3385ff);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+/* Delete Button — Red Gradient */
+.blog-actions .btn-delete {
+  background: linear-gradient(135deg, #ff3b30, #ff5c4d);
+  color: white;
+}
+
+.blog-actions .btn-delete:hover {
+  background: linear-gradient(135deg, #cc0000, #ff3b30);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+/* Blog Cover Image */
+.blog-cover {
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  margin-top: 1em;
+}
+
+.blog-cover:hover {
+  transform: scale(1.03);
+}
+
+/* Blog Body */
+.blog-body {
+  margin-top: 2em;
+  font-size: 1.2em;
+  color: #333;
+}
+
+/* Author Box */
+.author-box {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  max-width: 900px;
+  margin: 2em auto;
+  padding: 1em 1.5em;
+  background: #f9f9f9;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+}
+
+.author-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.author-name {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+/* Comments Section */
+.comments-section {
+  max-width: 900px;
+  margin: 2em auto;
+  padding: 2em;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+}
+
+.comments-section h2 {
+  font-size: 1.8em;
+  font-weight: 700;
+  margin-bottom: 1.5em;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 0.3em;
+}
+
+/* Comment Form */
+.comment-form {
+  display: flex;
+  gap: 0.5em;
+  margin-bottom: 2em;
+}
+
+.comment-input {
+  flex: 1;
+  padding: 0.9em 1.2em;
+  border-radius: 25px;
+  border: 1px solid #ddd;
+  font-size: 1em;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.comment-input:focus {
+  border-color: black;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.comment-btn {
+  background: black;
+  color: white;
+  padding: 0.9em 2em;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.comment-btn:hover {
+  background: #111;
+  transform: translateY(-2px);
+}
+
+/* Comments List */
+.comments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+/* Single Comment Card */
+.comment-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8em;
+  padding: 1em;
+  border-radius: 16px;
+  background: #f8f8f8;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.comment-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.comment-user {
+  font-weight: bold;
+  color: #111;
+}
+
+.comment-text {
+  margin-top: 0.3em;
+  color: #333;
+}

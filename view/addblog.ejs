@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("../partials/link") %>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Blog</title>
+    <link rel="stylesheet" href="/css/addblog.css">
+</head>
+<body>
+  <%- include("../partials/nav") %>
+
+  <div class="form-container">
+    <h1 class="form-title">Create a New Blog</h1>
+    
+    <form action="/blog" method="post" enctype="multipart/form-data">
+      
+      <!-- Cover Image -->
+      <div class="form-group">
+        <label for="coverImage" class="form-label">Cover Image</label>
+        <input type="file" id="coverImage" name="coverImage" class="form-file">
+      </div>
+
+      <!-- Title -->
+      <div class="form-group">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" id="title" name="title" placeholder="Enter blog title" class="form-input">
+      </div>
+
+      <!-- Body -->
+      <div class="form-group">
+        <label for="body" class="form-label">Body</label>
+        <textarea id="body" name="body" placeholder="Write your blog content..." class="form-textarea"></textarea>
+      </div>
+
+      <!-- Button -->
+      <button type="submit" class="btn-submit">Submit Blog</button>
+    </form>
+  </div>
+
+  <%- include("../partials/script") %>
+</body>
+</html>

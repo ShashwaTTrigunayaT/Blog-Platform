@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include("../partials/link") %>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/home.css">
+  <title>Home</title>
+</head>
+<body>
+
+  <%- include("../partials/nav") %>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">Welcome to Blogify</h1>
+      <p class="hero-subtitle">Explore amazing blogs, share your thoughts, and stay updated with the latest trends.</p>
+      <div class="hero-buttons">
+        <% if (locals.user) { %>
+          <a href="/blog/add-new" class="btn-primary-hero">Add Blog</a>
+        <% } else { %>
+          <a href="/user/signup" class="btn-primary-hero">Create Account</a>
+          <a href="/user/signin" class="btn-secondary-hero">Sign In</a>
+        <% } %>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Grid Section -->
+  <section class="container mt-5">
+    <div class="row">
+      <% if (blog.length > 0) { %>
+        <% blog.forEach(singleBlog => { %>
+          <div class="col">
+            <div class="card">
+              <img src="<%= singleBlog.coverImageURL %>" class="card-img-top" alt="Cover Image">
+              <div class="card-body">
+                <h5 class="card-title"><%= singleBlog.title %></h5>
+                <a href="/blog/<%= singleBlog._id %>" class="btn btn-primary">View</a>
+              </div>
+            </div>
+          </div>
+        <% }) %>
+      <% } else { %>
+        <p class="no-blogs">No blogs available. Be the first to <a href="/blog/add-new">create one!</a></p>
+      <% } %>
+    </div>
+  </section>
+
+  <%- include("../partials/script") %>
+</body>
+</html>

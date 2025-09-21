@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("../partials/link") %>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/signup.css">
+    <title>Signup</title>
+    
+</head>
+<body>
+    <%- include("../partials/nav") %>
+
+    <div class="signup-wrapper">
+        <div class="signup-card">
+            <h2>Create Account</h2>
+            <form method="post" action="/user/signup">
+                <div class="form-group">
+                    <label for="name" class="form-label">Full Name</label>
+                    <input type="text" name="fullName" class="form-control" id="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" name="email" class="form-control" id="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" name="password" class="form-control" id="password" required>
+                </div>
+
+                <button type="submit" class="btn-submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <%- include("../partials/script") %>
+</body>
+</html>
+
+

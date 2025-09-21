@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include("../partials/link") %>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/hero.css">
+  <title>Welcome | Blogify</title>
+</head>
+<body>
+  <%- include("../partials/nav") %>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">Welcome to Blogify</h1>
+      <p class="hero-subtitle">Share your thoughts. Read amazing blogs. Connect with a community of creators.</p>
+      <% if (!locals.user) { %>
+        <div class="hero-buttons">
+          <a href="/user/signup" class="btn-primary">Create Account</a>
+          <a href="/user/signin" class="btn-secondary">Access Account</a>
+        </div>
+      <% } else { %>
+        <a href="/dashboard" class="btn-primary">Go to Dashboard</a>
+      <% } %>
+    </div>
+  </section>
+
+  <%- include("../partials/script") %>
+</body>
+</html>

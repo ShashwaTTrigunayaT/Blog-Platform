@@ -1,0 +1,234 @@
+/* General Navbar */
+.navbar {
+  background-color: #fff; /* Nike white */
+  padding: 1em 2em;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Brand */
+.navbar-brand {
+  font-size: 1.8em;
+  font-weight: 900;
+  color: #111;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+  color: #0a84ff;
+}
+
+/* Navbar Menu */
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 1em;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.navbar-menu li {
+  position: relative;
+}
+
+.nav-link {
+  color: #111;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5em 1em;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: #0a84ff;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Special buttons */
+.nav-signup {
+  border: 2px solid #0a84ff;
+  color: #0a84ff;
+  transition: all 0.3s;
+}
+
+.nav-signup:hover {
+  background: #0a84ff;
+  color: #fff;
+}
+
+.nav-signin {
+  background: #0a84ff;
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.nav-signin:hover {
+  background: #0066cc;
+}
+
+/* Dropdown Menu */
+.nav-item-dropdown .dropdown-menu {
+  position: absolute;
+  top: 120%;
+  left: 0;
+  background: #fff;
+  color: #111;
+  border-radius: 12px;
+  min-width: 160px;
+  display: none;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.nav-item-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-item {
+  display: block;
+  padding: 0.8em 1em;
+  color: #111;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.dropdown-item:hover {
+  background: #f0f0f0;
+}
+
+/* Responsive Hamburger */
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-toggle-label {
+    display: block;
+    cursor: pointer;
+    position: relative;
+    width: 25px;
+    height: 20px;
+  }
+
+  .nav-toggle-label span,
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+    display: block;
+    background: #111;
+    height: 3px;
+    width: 100%;
+    border-radius: 3px;
+    position: absolute;
+    transition: all 0.3s ease;
+  }
+
+  .nav-toggle-label span::before {
+    top: -7px;
+  }
+
+  .nav-toggle-label span::after {
+    top: 7px;
+  }
+
+  .navbar-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    width: 200px;
+    display: none;
+    border-radius: 12px;
+    padding: 1em 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  }
+
+  .nav-toggle:checked + .nav-toggle-label + .navbar-menu {
+    display: flex;
+  }
+
+  .navbar-menu li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-link {
+    padding: 1em;
+  }
+}
+/* Profile picture style */
+.profile-pic {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid #000;
+  transition: transform 0.2s ease;
+}
+
+.profile-pic:hover {
+  transform: scale(1.05);
+}
+
+/* Dropdown menu for profile */
+.profile-dropdown {
+  position: relative;
+}
+
+.profile-dropdown .dropdown-menu {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  background: #fff;
+  list-style: none;
+  padding: 0.5rem 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  display: none;
+  min-width: 120px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.profile-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.profile-dropdown .dropdown-item {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.profile-dropdown .dropdown-item:hover {
+  background: #f4f4f4;
+}
+

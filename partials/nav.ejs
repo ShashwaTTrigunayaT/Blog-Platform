@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="/css/Header.css">
+
+<nav class="navbar">
+  <div class="navbar-container">
+    <!-- Brand -->
+    <a class="navbar-brand" href="/">Pulse</a>
+
+    <!-- Menu toggle for mobile -->
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="nav-toggle-label">
+      <span></span>
+    </label>
+
+    <!-- Menu -->
+    <ul class="navbar-menu">
+      <li><a class="nav-link" href="/">Home</a></li>
+
+      <% if (locals.user) { %>
+        <li><a class="nav-link" href="/blog/add-new">Add Blog</a></li>
+        <li><a class="nav-link" href="/user/profile">Profile</a></li>
+        <!-- Profile dropdown -->
+        <li class="nav-item-dropdown profile-dropdown">
+          <a href="#" class="nav-link dropdown-toggle">
+            <img 
+              src="<%= locals.user.profileImageURL || '/images/default.jpg' %>" 
+              alt="Profile" 
+              class="profile-pic"
+            >
+          </a>
+          
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/user/logout">Log-out</a></li>
+          </ul>
+        </li>
+      <% } else { %>
+        <li><a class="nav-link nav-signup" href="/user/signup">Create Account</a></li>
+        <li><a class="nav-link nav-signin" href="/user/signin">Access Account</a></li>
+      <% } %>
+    </ul>
+  </div>
+</nav>
+
+<% if (locals.error) { %>
+  <div class="alert alert-danger">
+    <%= locals.error %>
+  </div>
+<% } %>
